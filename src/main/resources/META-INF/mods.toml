@@ -1,0 +1,13 @@
+modLoader="javafml"
+loaderVersion="[44,)"
+license="MIT"
+
+[[mods]]
+modId="tutorialmod"
+version="1.0"
+displayName="Tutorial Mod"
+credits="Beans"
+authors="TurtyWurty"
+description='''
+A tutorial mod for 1.19.3.
+'''
