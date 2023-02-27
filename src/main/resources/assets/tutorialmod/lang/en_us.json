@@ -1,6 +1,6 @@
 {
-    "item.tutorialmod.example_item": "Example Item",
     "block.tutorialmod.example_block": "Example Block",
+    "item.tutorialmod.example_item": "Example Item",
     "item.tutorialmod.example_sword": "Example Sword",
     "item.tutorialmod.example_pickaxe": "Example Pickaxe",
     "item.tutorialmod.example_shovel": "Example Shovel",
@@ -10,5 +10,6 @@
     "item.tutorialmod.example_chestplate": "Example Chestplate",
     "item.tutorialmod.example_leggings": "Example Leggings",
     "item.tutorialmod.example_boots": "Example Boots",
+    "item.tutorialmod.example_food": "Example Food",
     "tab.tutorialmod.example_tab": "Example Tab"
 }

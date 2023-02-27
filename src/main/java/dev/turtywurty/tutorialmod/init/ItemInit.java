@@ -4,6 +4,7 @@ import dev.turtywurty.tutorialmod.TutorialMod;
 import dev.turtywurty.tutorialmod.util.tiers.ModArmorMaterials;
 import dev.turtywurty.tutorialmod.util.tiers.ModTiers;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -42,4 +43,7 @@ public class ItemInit {
 
     public static final RegistryObject<ArmorItem> EXAMPLE_BOOTS = ITEMS.register("example_boots",
             () -> new ArmorItem(ModArmorMaterials.EXAMPLE, EquipmentSlot.FEET, new Item.Properties()));
+
+    public static final RegistryObject<Item> EXAMPLE_FOOD = ITEMS.register("example_food", () -> new Item(
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1.4f).build())));
 }
