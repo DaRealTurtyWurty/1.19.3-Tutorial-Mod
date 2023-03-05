@@ -1,6 +1,7 @@
 package dev.turtywurty.tutorialmod;
 
 import dev.turtywurty.tutorialmod.init.BlockInit;
+import dev.turtywurty.tutorialmod.init.EntityInit;
 import dev.turtywurty.tutorialmod.init.ItemInit;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -17,6 +18,7 @@ public class TutorialMod {
 
         ItemInit.ITEMS.register(bus);
         BlockInit.BLOCKS.register(bus);
+        EntityInit.ENTITIES.register(bus);
     }
 
     public static void setTab(CreativeModeTab tab) {

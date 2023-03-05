@@ -1,4 +1,4 @@
-package dev.turtywurty.tutorialmod.events;
+package dev.turtywurty.tutorialmod.event;
 
 import dev.turtywurty.tutorialmod.TutorialMod;
 import net.minecraftforge.fml.common.Mod;

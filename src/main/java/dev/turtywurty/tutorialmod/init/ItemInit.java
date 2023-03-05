@@ -6,6 +6,7 @@ import dev.turtywurty.tutorialmod.util.tiers.ModTiers;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -46,4 +47,7 @@ public class ItemInit {
 
     public static final RegistryObject<Item> EXAMPLE_FOOD = ITEMS.register("example_food", () -> new Item(
             new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1.4f).build())));
+
+    public static final RegistryObject<ForgeSpawnEggItem> EXAMPLE_SPAWN_EGG = ITEMS.register("example_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityInit.EXAMPLE, 0xF0ABD1, 0xAE4C82, new Item.Properties()));
 }

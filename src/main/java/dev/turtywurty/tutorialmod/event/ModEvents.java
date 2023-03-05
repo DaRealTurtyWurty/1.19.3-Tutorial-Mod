@@ -1,12 +1,18 @@
-package dev.turtywurty.tutorialmod.events;
+package dev.turtywurty.tutorialmod.event;
 
 import dev.turtywurty.tutorialmod.TutorialMod;
+import dev.turtywurty.tutorialmod.entity.ExampleEntity;
 import dev.turtywurty.tutorialmod.init.BlockInit;
+import dev.turtywurty.tutorialmod.init.EntityInit;
 import dev.turtywurty.tutorialmod.init.ItemInit;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -34,9 +40,19 @@ public class ModEvents {
                         .displayItems((featureFlags, output, hasOp) -> {
                             ForgeRegistries.ITEMS.getEntries().stream()
                                     .filter(entry -> entry.getKey().location().getNamespace()
-                                            .equalsIgnoreCase(TutorialMod.MODID))
-                                    .map(Map.Entry::getValue)
+                                            .equalsIgnoreCase(TutorialMod.MODID)).map(Map.Entry::getValue)
                                     .forEachOrdered(output::accept);
                         })));
+    }
+
+    @SubscribeEvent
+    public static void createEntityAttributes(EntityAttributeCreationEvent event) {
+        event.put(EntityInit.EXAMPLE.get(), ExampleEntity.createExampleAttributes().build());
+    }
+
+    @SubscribeEvent
+    public static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
+        event.register(EntityInit.EXAMPLE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE,
+                ExampleEntity::canSpawn, SpawnPlacementRegisterEvent.Operation.OR);
     }
 }
